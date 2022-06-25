@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAddsub"
+    android:orientation="vertical"
+    android:background="#b1c8d3">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Subject"
+        android:textSize="75px"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="400px">
+    </TextView>
+
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Subject title"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextupdatesubjecttitle">
+    </EditText>
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Subject salary"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextupdatesubjectsalary">
+    </EditText>
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Subject time"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextupdatesubjecttime">
+    </EditText>
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Subject place"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextupdatesubjectplace">
+    </EditText>
+
+    <Button
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:layout_marginTop="60px"
+        android:text="Cập nhật"
+        android:background="@drawable/background_bt"
+        android:id="@+id/buttonupdatesubject"></Button>
+
+</LinearLayout>

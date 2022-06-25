@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAddsub"
+    android:orientation="vertical"
+    android:background="#b1c8d3">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Employee"
+        android:textSize="75px"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="400px">
+    </TextView>
+
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Tên nhân viên"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextemployeenameupdate">
+    </EditText>
+    <TextView
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Giới tính"
+        android:textSize="45px"
+        android:layout_marginTop="60px">
+    </TextView>
+    <RadioGroup
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:paddingTop="30px">
+        <RadioButton
+            android:layout_marginRight="150px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nam"
+            android:textColor="@color/black"
+            android:textSize="45px"
+            android:id="@+id/radiobuttonnamupdate"
+            android:checked="true">
+        </RadioButton>
+        <RadioButton
+            android:layout_marginLeft="150px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nữ"
+            android:textColor="@color/black"
+            android:textSize="45px"
+            android:id="@+id/radiobuttonnuupdate"
+            >
+        </RadioButton>
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Mã nhân viên"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextemployeecodeupdate">
+    </EditText>
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:hint="Năm sinh"
+        android:layout_marginTop="60px"
+        android:id="@+id/edittextemployeebirthupdate"
+        android:inputType="datetime">
+    </EditText>
+
+    <Button
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:layout_marginTop="60px"
+        android:text="Cập nhật"
+        android:background="@drawable/background_bt"
+        android:id="@+id/buttonupdateemployee"></Button>
+
+</LinearLayout>

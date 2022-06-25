@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#b1c8d3"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employee Management"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="400px"
+        android:textSize="80px"
+     />
+    <Button
+        android:background="@drawable/background_bt"
+        android:layout_marginTop="300px"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:text="subject"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_subject"
+    ></Button>
+    <Button
+        android:background="@drawable/background_bt"
+        android:layout_marginTop="20px"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:text="author"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_author"
+        ></Button>
+    <Button
+        android:background="@drawable/background_bt"
+        android:layout_marginTop="20px"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:text="exit"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_exit"
+        ></Button>
+</LinearLayout>
