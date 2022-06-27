@@ -43,16 +43,42 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Gán cho các biến có giá trị nhập từ edittext
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("1524658a"))
+                String tentaikhoan = username.getText().toString();
+                String matkhau = password.getText().toString();
+
+                //Sử dụng con trỏ để getdata từ SQLite
+                Cursor cursor = database.getData();
+
+                //Lấy dữ liệu gán vào biến, tài khoản ở ô 1, mật khẩu ô 2, ô 0 là id
+                while (cursor.moveToNext())
                 {
-                    Toast.makeText(ActivityLogin.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(ActivityLogin.this,MainActivity.class);
-                    startActivity(intent);
+                    String datataikhoan= cursor.getString(1);
+                    String datamatkhau= cursor.getString(2);
+
+                    if(datataikhoan.equals(tentaikhoan) && datamatkhau.equals(matkhau))
+                    {
+                        int phanquyen = cursor.getInt(4);
+                        int id = cursor.getInt(0);
+                        String email= cursor.getString(3);
+                        String tentk = cursor.getString(1);
+
+                        Toast.makeText(ActivityLogin.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ActivityLogin.this,MainActivity.class);
+
+
+                        intent.putExtra("phanq",phanquyen);
+                        intent.putExtra("id",id);
+                        intent.putExtra("email",email);
+                        intent.putExtra("tentaikhoan",tentk);
+
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(ActivityLogin.this,"Tên đăng nhập hoặc mật khẩu không đúng",Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else
-                {
-                    Toast.makeText(ActivityLogin.this,"Sai tài khoản hoặc mật khẩu",Toast.LENGTH_LONG).show();
-                }
+                cursor.moveToFirst();
+                cursor.close();
 
 
             }

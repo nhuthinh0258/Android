@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.renderscript.Sampler;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -197,5 +198,21 @@ public class SQLite extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_TAIKHOAN,null);
         return res;
+    }
+
+    //Phương thức add tài khoản vào database
+    public void Addtaikhoan(Taikhoan taikhoan)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TEN_TAI_KHOAN,taikhoan.getmTentaikhoan());
+        values.put(MAT_KHAU,taikhoan.getmMatkhau());
+        values.put(EMAIL,taikhoan.getmEmail());
+        values.put(PHAN_QUYEN,taikhoan.getmPhanquyen());
+
+        db.insert(TABLE_TAIKHOAN,null,values);
+
+        db.close();
     }
 }
