@@ -17,7 +17,9 @@
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_addsub.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_employee.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_info_employee.xml" value="0.25" />
+        <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_subject.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_update_employee.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/layout/activity_update_subject.xml" value="0.25" />
@@ -34,6 +36,7 @@
         <entry key="..\:/Baitaplon/app/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/menu/menuadd.xml" value="0.25" />
         <entry key="..\:/Baitaplon/app/src/main/res/menu/menuaddemployee.xml" value="0.25" />
+        <entry key="..\:/Baitaplon/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1515" />
         <entry key="..\:/Baitaplon/app/src/main/res/mipmap-anydpi-v26/ic_launcher_backgrond_btl_foreground.xml" value="0.121" />
       </map>
     </option>

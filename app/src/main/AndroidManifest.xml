@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baitaplon">
         <activity
+            android:name=".ActivityRegister"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActivityUpdateEmployee"
             android:exported="false" />
         <activity
@@ -34,7 +40,7 @@
             android:name=".ActivitySubject"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

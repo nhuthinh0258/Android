@@ -52,12 +52,12 @@
     </EditText>
 
     <Button
+        android:id="@+id/buttonupdatesubject"
         android:layout_width="700px"
         android:layout_height="150px"
         android:layout_gravity="center"
         android:layout_marginTop="60px"
-        android:text="Cập nhật"
         android:background="@drawable/background_bt"
-        android:id="@+id/buttonupdatesubject"></Button>
+        android:text="Cập nhật"></Button>
 
 </LinearLayout>

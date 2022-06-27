@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.example.baitaplon.model.Employee;
 import com.example.baitaplon.model.Subject;
+import com.example.baitaplon.model.Taikhoan;
 
 public class SQLite extends SQLiteOpenHelper {
 
@@ -26,13 +27,23 @@ public class SQLite extends SQLiteOpenHelper {
     private static String PLACE = "place";
     private static int VERSION = 1;
 
-    //Bảng sinh viên
+    //Bảng nhân viên
     private static String TABLE_EMPLOY = "employ";
     private static String ID_EMPLOY = "idemploy";
     private static String EMPLOY_NAME = "nameemploy";
     private static String SEX = "sex";
     private static String EMPLOY_CODE = "employcode";
     private static String DATE_OF_BIRTH = "dateofbirth";
+
+    //Bảng user
+    private static String TABLE_TAIKHOAN = "taikhoan";
+    private static String ID_TAI_KHOAN = "idtaikhoan";
+    private static String TEN_TAI_KHOAN = "tentaikhoan";
+    private static String MAT_KHAU = "matkhau";
+    private static String PHAN_QUYEN = "phanquyen";
+    private static String EMAIL = "email";
+
+    private Context context;
 
     //Tạo bảng công việc
     private String SQLQuery = "CREATE TABLE "+ TABLE_SUBJECTS +" ( "+ID_SUBJECTS+" INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -41,7 +52,7 @@ public class SQLite extends SQLiteOpenHelper {
             +TIME+" TEXT, "
             + PLACE+" TEXT) ";
 
-    //Tạo bảng sinh viên
+    //Tạo bảng nhân viên
     private String SQLQuery1 = "CREATE TABLE "+ TABLE_EMPLOY +" ( "+ID_EMPLOY+" integer primary key AUTOINCREMENT, "
             +EMPLOY_NAME+" TEXT, "
             +SEX+" TEXT, "
@@ -50,14 +61,31 @@ public class SQLite extends SQLiteOpenHelper {
             +ID_SUBJECTS+" INTEGER , FOREIGN KEY ( "+ ID_SUBJECTS +" ) REFERENCES "+
             TABLE_SUBJECTS+"("+ID_SUBJECTS+"))";
 
+    //Tạo bảng user
+    private String SQLQuery2 = "CREATE TABLE "+ TABLE_TAIKHOAN +" ( "+ID_TAI_KHOAN+" INTEGER PRIMARY KEY AUTOINCREMENT, "
+            +TEN_TAI_KHOAN+" TEXT UNIQUE, "
+            +MAT_KHAU+" TEXT, "
+            +EMAIL+" TEXT, "
+            + PHAN_QUYEN+" INTEGER) ";
+
+    private String SQLQuery3 = "INSERT INTO taikhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
+    private String SQLQuery4 = "INSERT INTO taikhoan VAlUES (null,'khanh','khanh','khanh@gmail.com',1)";
+
     public SQLite(@Nullable Context context) {
         super(context, DATABASE_NAME,null,VERSION);
+
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQLQuery);
         db.execSQL(SQLQuery1);
+        db.execSQL(SQLQuery2);
+        db.execSQL(SQLQuery3);
+        db.execSQL(SQLQuery4);
+
+
     }
 
     @Override
@@ -161,5 +189,13 @@ public class SQLite extends SQLiteOpenHelper {
 
         db.update(TABLE_EMPLOY,values,ID_EMPLOY+"="+id,null);
         return true;
+    }
+
+    //Phương thức lấy tất cả tài khoản
+    public Cursor getData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_TAIKHOAN,null);
+        return res;
     }
 }
